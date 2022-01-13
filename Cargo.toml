@@ -6,12 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-lightning = { version = "0.0.103" }
-lightning-block-sync = { version = "0.0.103", features = [ "rpc-client" ] }
-lightning-invoice = { version = "0.11.0" }
-lightning-net-tokio = { version = "0.0.103" }
-lightning-persister = { version = "0.0.103" }
-lightning-background-processor = { version = "0.0.103" }
+lightning = { version = "0.0.104", features = ["max_level_trace"] }
+lightning-block-sync = { version = "0.0.104", features = [ "rpc-client" ] }
+lightning-invoice = { version = "0.12.0" }
+lightning-net-tokio = { version = "0.0.104" }
+lightning-persister = { version = "0.0.104" }
+lightning-background-processor = { version = "0.0.104" }
 
 base64 = "0.13.0"
 bitcoin = "0.27"
@@ -26,5 +26,5 @@ serde_json = { version = "1.0" }
 ureq = { version = "~2.2.0", features = ["json"] }
 tokio = { version = "1.5", features = [ "io-util", "macros", "rt", "rt-multi-thread", "sync", "net", "time" ] }
 log = "^0.4"
-bdk = { git = "https://github.com/johncantrell97/bdk" }
-bdk-ldk = { git = "https://github.com/johncantrell97/bdk-ldk" }
+bdk = { git = "https://github.com/johncantrell97/bdk", commit="261e333" }
+bdk-ldk = { git = "https://github.com/johncantrell97/bdk-ldk", commit="44a0557" }
