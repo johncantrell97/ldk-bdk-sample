@@ -28,7 +28,7 @@ use lightning::ln::channelmanager::{
 use lightning::ln::peer_handler::{IgnoringMessageHandler, MessageHandler, SimpleArcPeerManager};
 use lightning::ln::{PaymentHash, PaymentPreimage, PaymentSecret};
 use lightning::routing::network_graph::{NetGraphMsgHandler, NetworkGraph};
-use lightning::routing::scorer::Scorer;
+use lightning::routing::scoring::Scorer;
 use lightning::util::config::UserConfig;
 use lightning::util::events::{Event, PaymentPurpose};
 use lightning::util::ser::ReadableArgs;
@@ -364,6 +364,19 @@ async fn handle_ldk_events(
         Event::DiscardFunding { .. } => {
             // A "real" node should probably "lock" the UTXOs spent in funding transactions until
             // the funding transaction either confirms, or this event is generated.
+        }
+        Event::PaymentFailed {
+            payment_id: _,
+            payment_hash: _,
+        } => {
+            eprintln!("Event::PaymentFailed is not yet implemented");
+        }
+        Event::PaymentPathSuccessful {
+            payment_id: _,
+            payment_hash: _,
+            path: _,
+        } => {
+            eprintln!("Event::PaymentPathSuccessful is not yet implemented");
         }
     }
 }
