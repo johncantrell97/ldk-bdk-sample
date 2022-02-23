@@ -9,7 +9,7 @@ git clone https://github.com/johncantrell97/ldk-bdk-sample
 ## Usage
 ```
 cd bdk-ldk-sample
-cargo run <electrum-url> <ldk_storage_directory_path> [<ldk-peer-listening-port>] [bitcoin-network] [announced-listen-addr announced-node-name]
+cargo run <electrum-url> <ldk_storage_directory_path> [<ldk-peer-listening-port>] [bitcoin-network] [announced-node-name announced-listen-addr]
 ```
 `bitcoin-network`: defaults to `testnet`. Options: `testnet`, `regtest`, and `signet`.
 
